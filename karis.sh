@@ -5,16 +5,14 @@
 
 # Define colors
 RED='tput bold && tput setaf 1'
+NC='tput sgr0'
 
-# checking that you have root
-if [ $UID -ne 0 ]
-then
-    "Please use this script as root"
-    exit
-fi
+function RED(){
+    echo -e "\n${RED}${1}${NC}"
+}
 
 # go to home dir
-sudo cd
+cd
 
 # start out with the updates of all things
 sudo apt update
@@ -57,7 +55,7 @@ sudo apt install -y software-properties-common apt-transport-https
 sudo wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
-sudo apt install code
+sudo apt install code &&
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -79,24 +77,30 @@ sudo mkdir -p /usr/local/share/man/man1
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
 cd && sudo rm -rf alacirtty/
 
+
+
 # install zsh
 RED "DO NOT MAKE ZSH DEFAULT SHELL"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# Make zsh the default shell
-chsh -s $(which zsh)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
 
 # installing dotfiles & making them default
 git clone https://github.com/0xkurome/dotfiles.git
-cd dotfiles/
+cd dotfiles/ 
 sudo cp zsh/.zshrc ~/.zshrc
 sudo cp zsh/.zprofile ~/.zprofile
+sudo cp .oh-my-zsh/themes/kurome.zsh-theme ~/.oh-my-zsh/themes
 sudo cp bash/.bashrc ~/.bashrc
 sudo cp .aliases ~/.aliases
 sudo cp -r alacritty/.config/alacritty ~/.config
 sudo cp vim/.vimrc ~/.vimrc
-sudo cp -r neofetch/.config/neofetch/ ~/.config/neofetch/
+sudo cp -r neofetch/.config/neofetch/ ~/.config
 sudo cp radare2/.radare2rc ~/.radare2rc
+cd
 
+# remove extra dotfiles
+rm -rf .zshrc.pre-oh-my-zsh
+
+# Make zsh the default shell
+chsh -s $(which zsh) && exit
