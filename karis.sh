@@ -10,6 +10,9 @@ then
     exit
 fi
 
+# go to home dir
+sudo cd
+
 # start out with the updates of all things
 sudo apt update
 
@@ -31,7 +34,7 @@ pip3 install ipcalc
 cd Kurcoder
 sudo cp kurcoder.py kurcoder
 sudo mv kurcoder /usr/local/bin
-cd && rm -rf Kurcoder/
+cd .. && rm -rf Kurcoder/
 
 # install neofetch
 sudo apt install -y neofetch
@@ -47,7 +50,7 @@ sudo apt update
 sudo apt install -y brave-browser
 
 # install Visual Studio code
-sudo apt install software-properties-common apt-transport-https
+sudo apt install -y software-properties-common apt-transport-https
 sudo wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
@@ -75,12 +78,15 @@ cd && sudo rm -rf alacirtty/
 
 # install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# exit zsh
+exit
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Make zsh the default shell
 chsh -s $(which zsh)
-
 # installing dotfiles & making them default
 git clone https://github.com/0xkurome/dotfiles.git
 cd dotfiles/
@@ -90,6 +96,6 @@ sudo cp bash/.bashrc ~/.bashrc
 sudo cp .aliases ~/.aliases
 sudo cp -r alacritty/.config/alacritty ~/.config
 sudo cp vim/.vimrc ~/.vimrc
-sudo cp neofetch/.config/neofetch/config.conf ~/.config/neofetch/
+sudo cp -r neofetch/.config/neofetch/ ~/.config/neofetch/
 sudo cp radare2/.radare2rc ~/.radare2rc
 
