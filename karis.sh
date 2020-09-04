@@ -4,8 +4,9 @@
 # License: GNU GPLv3
 
 # Define colors
-RED='tput bold && tput setaf 1'
-NC='tput sgr0'
+RED=`tput bold && tput setaf 1`
+CYAN=`tput bold && tput setaf 6`
+NC=`tput sgr0`
 
 function RED(){
     echo -e "\n${RED}${1}${NC}"
@@ -111,7 +112,7 @@ cd && sudo rm -rf alacirtty/
 
 
 # install zsh
-CYAN "Installing zsh - *DONT FORGET TO TYPE exit AFTER zsh INSTALL*"
+RED "Installing zsh - *DONT FORGET TO TYPE exit AFTER zsh INSTALL*"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
