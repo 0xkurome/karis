@@ -3,6 +3,9 @@
 # by Kurome
 # License: GNU GPLv3
 
+# Define colors
+RED='tput bold && tput setaf 1'
+
 # checking that you have root
 if [ $UID -ne 0 ]
 then
@@ -77,16 +80,14 @@ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz 
 cd && sudo rm -rf alacirtty/
 
 # install zsh
+RED "DO NOT MAKE ZSH DEFAULT SHELL"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# exit zsh
-exit
-
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Make zsh the default shell
 chsh -s $(which zsh)
+
 # installing dotfiles & making them default
 git clone https://github.com/0xkurome/dotfiles.git
 cd dotfiles/
