@@ -29,6 +29,7 @@ After the script is finished please log out and log back in to update the defaul
 
 ### Tools Included or updated
 - Alacritty
+- Exiftool
 - Filezilla
 - Kurcoder (placed in /usr/local/bin to use globally by just running `$ kurcoder`
 - Neofetch
@@ -38,6 +39,7 @@ After the script is finished please log out and log back in to update the defaul
 - Remmina
 - Rust
 - RustScan
+- StegCracker
 - Visual Studio Code
 - zsh (with oh-my-zsh & custom theme)
 - Some of my personal dotfiles for ricing

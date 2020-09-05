@@ -50,7 +50,7 @@ sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 sudo mkdir -p /usr/local/share/man/man1
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-cd && sudo rm -rf alacirtty/
+cd && sudo rm -rf alacritty/
 
 # install tmux
 CYAN "Installing tmux"
@@ -98,6 +98,15 @@ sudo apt install -y filezilla filezilla-common
 # install Remmina for RDP
 CYAN "Installing Remmina"
 sudo apt install -y remmina
+
+# install exiftool
+CYAN "Installing Exiftool"
+sudo apt install -y exiftool
+
+# install stegcracker
+CYAN "Installing Stegcracker"
+sudo apt install -y steghide
+pip3 install stegcracker
 
 # install RE suite
 CYAN "Installing my personal Kurome's RE Suite including ltrace, strace, gdb, ollydgb, & edb"
