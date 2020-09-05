@@ -159,4 +159,7 @@ rm -rf .zshrc.pre-oh-my-zsh
 
 # Make zsh the default shell
 CYAN "making zsh the default shell"
-chsh -s /bin/zsh && exit
+chsh -s /bin/zsh 
+
+CYAN "Please log out and log back in to update default shell"
+exit
