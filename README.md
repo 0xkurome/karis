@@ -41,8 +41,7 @@ After the script is finished please log out and log back in to update the defaul
 - RustScan
 - StegCracker
 - Visual Studio Code
-- zsh (with oh-my-zsh & custom theme)
-- Some of my personal dotfiles for ricing
+- zsh (with oh-my-zsh)
 
 ### Reverse Engineering & Malware Analysis Tools
 - edb-debugger
