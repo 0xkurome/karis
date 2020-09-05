@@ -2,12 +2,23 @@
 
 ### Install
 <b>Do not</b> run `karis` with sudo
+
+Use the Python module, Karis, to install easily:
+
+```
+pip3 install karis
+karis
+```
+
+or clone manually
+
 ```
 $ git clone https://github.com/0xkurome/karis.git
 $ cd karis
 $ chmod +x karis.sh
 $ ./karis.sh
 ```
+
 Rust will ask if you would want default or customized installtion (I suggest choosing the default option `1` if you never worked with rust before)
 <br>
 When prompted to make oh-my-zsh default type: `y`
