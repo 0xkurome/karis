@@ -18,19 +18,35 @@ After the script is finished please log out and log back in to update the defaul
 
 ### Tools Included or updated
 - Alacritty
-- OpenVPN
-- Python3 & Pip
+- Filezilla
 - Kurcoder (placed in /usr/local/bin to use globally by just running `$ kurcoder`
 - Neofetch
+- OpenVPN
+- Python3 & pip3
 - Ranger
 - Remmina
-- ltrace
-- strace
-- gdb
-- ollydgb
-- edb-debugger
-- Ghidra (placed in /opt)
-- Visual Studio Code
 - Rust
+- RustScan
+- Visual Studio Code
 - zsh (with oh-my-zsh & custom theme)
 - Some of my personal dotfiles for ricing
+
+### Reverse Engineering & Malware Analysis Tools
+- edb-debugger
+- gdb
+- Ghidra (placed in /opt)
+- ollydbg
+- ltrace
+- strace
+
+### Dotfiles added or changed
+- alacritty.yml
+- .aliases
+- .bashrc
+- neofetch .config
+- .oh-my-zsh/themes (kurome style theme based on mh theme)
+- Removed: .zshrc.pre-oh-my-zsh
+- .radare2rc
+- .vimrc
+- .zprofile
+- .zshrc
