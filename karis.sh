@@ -47,13 +47,24 @@ sudo cp kurcoder.py kurcoder
 sudo mv kurcoder /usr/local/bin
 cd .. && rm -rf Kurcoder/
 
+# install tmux
+CYAN "Installing tmux"
+sudo apt install -y tmux
 # install neofetch
 CYAN "Installing Neofetch"
 sudo apt install -y neofetch
 
+# install ranger
+CYAN "Installing Ranger"
+sudo apt install -y ranger
+
+# install Remmina for RDP
+CYAN "Installing Remmina"
+sudo apt install -y remmina
+
 # install RE suite
-CYAN "Installing ltrace, strace, and gdb"
-sudo apt install -y ltrace strace gdb
+CYAN "Installing my personal Kurome's RE Suite including ltrace, strace, gdb, ollydgb, edb"
+sudo apt install -y ltrace strace gdb ollydbg edb-debugger
 
 # install openjdk-11 for ghidra
 CYAN "Installing OpenJDK-11 for Ghidra"
@@ -131,6 +142,7 @@ sudo cp vim/.vimrc ~/.vimrc
 sudo cp -r neofetch/.config/neofetch/ ~/.config
 sudo cp radare2/.radare2rc ~/.radare2rc
 cd
+rm -rf dotfiles/
 
 # remove extra dotfiles
 CYAN "removed pre-oh-my-zshrc"
