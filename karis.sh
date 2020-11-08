@@ -1,6 +1,6 @@
 #!/bin/bash
-# Kurome's Auto Ricing Installation Script
-# by Kurome
+# Kyli0x's Auto Ricing Installation Script
+# by Kyli0x
 # License: GNU GPLv3
 
 # Define colors
@@ -21,6 +21,10 @@ cd
 # start out with the updates of all things
 CYAN "Updating System"
 sudo apt update
+
+# need the gits
+CYAN "Installing git"
+sudo apt install -y git
 
 # will need this for rust, later
 CYAN "Installing build-essentials for rust"
@@ -64,6 +68,14 @@ sudo apt install -y neofetch
 CYAN "Installing Ranger"
 sudo apt install -y ranger
 
+# install breeze cursor theme
+CYAN "Installing Breeze Cursor Theme"
+sudo apt install -y breeze-cursor-theme
+
+# install papirus icon theme
+CYAN "Installing Papirus-Dark Icon Theme"
+sudo apt install -y papirus-icon-theme
+
 # install openvpn
 CYAN "Installing openVPN"
 sudo apt install -y openvpn
@@ -74,17 +86,13 @@ wget https://github.com/RustScan/RustScan/releases/download/1.8.0/rustscan_1.8.0
 sudo dpkg -i rustscan*
 sudo rm rustscan*.deb
 
-# need the gits
-CYAN "Installing git"
-sudo apt install -y git
-
 # install python3 & pip3
 CYAN "Installing python3 & PIP"
 sudo apt install -y python3 python3-pip
 
 # install kurcoder
 CYAN "Installing Kurcoder & adding to /usr/local/bin"
-git clone https://github.com/0xkurome/Kurcoder.git
+git clone https://github.com/kyli0x/Kurcoder.git
 pip3 install ipcalc
 cd Kurcoder
 sudo cp kurcoder.py kurcoder
@@ -148,19 +156,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # installing dotfiles & making them default
 CYAN "Installing & updating my personal dotfiles"
-git clone https://github.com/0xkurome/dotfiles.git
-cd dotfiles/ 
-sudo cp zsh/.zshrc ~/.zshrc
-sudo cp zsh/.zprofile ~/.zprofile
-sudo cp .oh-my-zsh/themes/kurome.zsh-theme ~/.oh-my-zsh/themes
-sudo cp bash/.bashrc ~/.bashrc
-sudo cp .aliases ~/.aliases
-sudo cp -r alacritty/.config/alacritty ~/.config
-sudo cp vim/.vimrc ~/.vimrc
-sudo cp -r neofetch/.config/neofetch/ ~/.config
-sudo cp radare2/.radare2rc ~/.radare2rc
-cd
-rm -rf dotfiles/
+git clone https://github.com/kyli0x/kyricer.git
+cd kyricer/ 
+chmod +x install.sh
+./install.sh
 
 # remove extra dotfiles
 CYAN "removed pre-oh-my-zshrc"

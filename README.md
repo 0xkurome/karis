@@ -1,4 +1,4 @@
-## Kurome's Auto Ricing Installation Script for kali linux 2020.3+
+## Kyli0x's Auto Ricing Installation Script for kali linux 2020.3+
 
 ### Install
 <b>Do not</b> run `karis` with sudo
@@ -13,7 +13,7 @@ karis
 or clone manually
 
 ```
-$ git clone https://github.com/0xkurome/karis.git
+$ git clone https://github.com/kyli0x/karis.git
 $ cd karis
 $ chmod +x karis.sh
 $ ./karis.sh
