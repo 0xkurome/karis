@@ -56,7 +56,7 @@ After the script is finished please log out and log back in to update the defaul
 - .aliases
 - .bashrc
 - neofetch .config
-- .oh-my-zsh/themes (kurome style theme based on mh theme)
+- .oh-my-zsh/themes (kyli0x style theme based on mh theme)
 - Removed: .zshrc.pre-oh-my-zsh
 - .radare2rc
 - .vimrc

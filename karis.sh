@@ -117,7 +117,7 @@ sudo apt install -y steghide
 pip3 install stegcracker
 
 # install RE suite
-CYAN "Installing my personal Kurome's RE Suite including ltrace, strace, gdb, ollydgb, & edb"
+CYAN "Installing my personal RE Suite including ltrace, strace, gdb, ollydgb, & edb"
 sudo apt install -y ltrace strace gdb ollydbg edb-debugger
 
 # install openjdk-11 for ghidra
